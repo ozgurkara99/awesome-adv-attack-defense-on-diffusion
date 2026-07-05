@@ -1,0 +1,60 @@
+name: "📄 Add a paper"
+description: Suggest a paper for the list
+title: "[Add] <method name / paper title>"
+labels: ["paper suggestion"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Paper title
+      placeholder: e.g. MetaCloak — Preventing Unauthorized Subject-Driven Text-to-Image Diffusion-Based Synthesis via Meta-Learning
+    validations:
+      required: true
+  - type: input
+    id: venue
+    attributes:
+      label: Venue & year
+      placeholder: e.g. CVPR 2024
+    validations:
+      required: true
+  - type: input
+    id: paper-link
+    attributes:
+      label: Paper link (arXiv preferred)
+      placeholder: https://arxiv.org/abs/XXXX.XXXXX
+    validations:
+      required: true
+  - type: input
+    id: code-link
+    attributes:
+      label: Official code link (if any)
+      placeholder: https://github.com/...
+  - type: dropdown
+    id: section
+    attributes:
+      label: Where does it belong?
+      options:
+        - "Image · Attacks · Personalization"
+        - "Image · Attacks · Style / Copyright"
+        - "Image · Attacks · Editing / Inpainting"
+        - "Image · Attacks · Face Swap / Biometric"
+        - "Image · Defenses · Purification"
+        - "Image · Defenses · Unlearning & Red-Teaming"
+        - "Video · Attacks · Image-to-Video"
+        - "Video · Attacks · Talking-Head"
+        - "Video · Attacks · V2V Editing"
+        - "Video · Attacks · T2V Safety"
+        - "Video · Defenses & Benchmarks"
+        - "3D · Attacks · Editing"
+        - "3D · Attacks · Poisoning / Cost"
+        - "3D · Defenses"
+        - "Evaluation · Datasets & Benchmarks"
+        - "Related Surveys"
+        - "Not sure"
+    validations:
+      required: true
+  - type: textarea
+    id: tldr
+    attributes:
+      label: One-sentence TL;DR
+      placeholder: What does the method do, mechanically, that its predecessors didn't?
