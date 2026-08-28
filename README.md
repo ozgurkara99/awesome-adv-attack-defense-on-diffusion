@@ -4,6 +4,10 @@
 
 ### A curated, task-centric collection of adversarial attacks and defenses for diffusion models across **image**, **video**, and **3D**
 
+Ozgur Kara<sup>1</sup> · Tarik Can Ozden<sup>1</sup> · Furkan Horoz<sup>1</sup> · Zeqian Long<sup>1,3</sup> · Haotian Xue<sup>2</sup> · Yipu Chen<sup>2</sup> · Oguzhan Akcin<sup>4</sup> · Yongxin Chen<sup>2</sup> · James Matthew Rehg<sup>1</sup>
+
+<sup>1</sup>University of Illinois Urbana-Champaign · <sup>2</sup>Georgia Institute of Technology · <sup>3</sup>Stanford University · <sup>4</sup>The University of Texas at Austin
+
 [![Awesome](https://awesome.re/badge-flat2.svg)](https://awesome.re)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
