@@ -209,7 +209,7 @@ Adversarial research originated in the image domain, catalyzed by the public rel
 | **AdvUnlearn** | NeurIPS 2024 | Hardens concept erasure by adversarially training the CLIP text encoder with utility-preserving regularization; transfers modularly across diffusion backbones. | [📄&nbsp;Paper](https://arxiv.org/abs/2405.15234) · [💻&nbsp;Code](https://github.com/OPTML-Group/AdvUnlearn) |
 | **GuardT2I** | NeurIPS 2024 | Translates guidance embeddings back into natural language to expose intent hidden by adversarial prompts. | [📄&nbsp;Paper](https://arxiv.org/abs/2403.01446) · [💻&nbsp;Code](https://github.com/cure-lab/GuardT2I) |
 | **EraseDiff** | arXiv 2024 | Fast unlearning that redirects forget-set denoising toward mismatched targets, erasing data influence from the weights. | [📄&nbsp;Paper](https://arxiv.org/abs/2401.05779) · [💻&nbsp;Code](https://github.com/JingWu321/EraseDiff) |
-| **Few-shot Erasing** | arXiv 2024 | Erases concepts by fine-tuning only the CLIP text encoder on a few images in seconds, though broad concepts resist. | [📄&nbsp;Paper](https://arxiv.org/abs/2405.07288) · [💻&nbsp;Code](https://github.com/fmp453/few-shot-erasing) |
+| **Erasing (Few-shot Unlearning)** | arXiv 2024 | Erases concepts by fine-tuning only the CLIP text encoder on a few images in seconds, though broad concepts resist. | [📄&nbsp;Paper](https://arxiv.org/abs/2405.07288) · [💻&nbsp;Code](https://github.com/fmp453/few-shot-erasing) |
 | **CAT** | ICML 2025 | Red-teams protections with lightweight LoRA adapters in the LDM autoencoder that realign latent representations distorted by protected samples — no pixel purification needed. | [📄&nbsp;Paper](https://arxiv.org/abs/2502.07225) · [💻&nbsp;Code](https://github.com/senp98/CAT) |
 | **GuardDoor** | arXiv 2025 | Bakes a trigger-activated protective backdoor into the image encoder that survives JPEG, DiffPure, and IMPRESS — sidestepping the purification arms race for cooperating platforms. | [📄&nbsp;Paper](https://arxiv.org/abs/2503.03944) |
 | **DiffShortcut** | KDD 2026 | Red-teams protective perturbations by purifying with restoration and super-resolution, then disentangling the personalized concept via contrastive decoupling learning. | [📄&nbsp;Paper](https://arxiv.org/abs/2406.18944) · [💻&nbsp;Code](https://github.com/liuyixin-louis/DiffShortcut) |
@@ -271,7 +271,7 @@ Adversarial research originated in the image domain, catalyzed by the public rel
 | **AdvUnlearn** | I2P, Imagenette, COCO | SD1.4 | ➖ | ✅ | ✅ | ✅ |
 | **GuardT2I** | I2P, I2P-Sexual, SneakyPrompt, MMA-Diffusion, Ring-A-Bell, P4D | SD1.5 | ➖ | ✅ | ✅ | ✅ |
 | **EraseDiff** | CIFAR-10, UTKFace, CelebA, CelebA-HQ | Conditional DDIM, unconditional DDIM/DDPM | ➖ | ✅ | ➖ | ✅ |
-| **Few-shot Erasing** | Author-chosen concepts with CLIP ImageNet templates | SD1.5 | ➖ | ✅ | ➖ | ❌ |
+| **Erasing (Few-shot Unlearning)** | Author-chosen concepts with CLIP ImageNet templates | SD1.5 | ➖ | ✅ | ➖ | ❌ |
 | **CAT** | CelebA-HQ, VGGFace2, WikiArt | AdvDM, Mist, SDS, Glaze, Anti-DreamBooth, MetaCloak | ➖ | ❌ | ➖ | ❌ |
 | **GuardDoor** | CelebA, WikiArt | SD2.1 | ✅ | ❌ | ➖ | ✅ |
 | **DiffShortcut** | VGGFace2 | MetaCloak, AdvDM, PhotoGuard, Glaze | ➖ | ❌ | ➖ | ❌ |
@@ -341,7 +341,7 @@ Video is the fastest-growing attack surface, contending with the **temporal axis
 | Method | Venue | TL;DR | Links |
 |:---|:---:|:---|:---|
 | **T2VSafetyBench** | NeurIPS 2024 | The standard T2V safety benchmark: 4,400 malicious prompts across 12 safety categories, including video-specific temporal risk. | [📄&nbsp;Paper](https://arxiv.org/abs/2407.05965) · [💻&nbsp;Code](https://github.com/yibo-miao/T2VSafetyBench) |
-| **IP-Bench** | arXiv 2026 | Benchmarks I2V image-protection methods under preprocessing attacks and transfer settings, showing existing protections remain fragile to practical transformations. | [📄&nbsp;Paper](https://arxiv.org/abs/2603.26154) |
+| **IPV-Bench** | arXiv 2026 | Benchmarks I2V image-protection methods under diverse image-to-video generation scenarios, showing existing protections remain fragile to practical transformations. | [📄&nbsp;Paper](https://arxiv.org/abs/2603.26154) |
 
 <details>
 <summary><b>🎬 Video evaluation matrix</b> — evaluation sources, target models, and analysis coverage (mirrors the survey tables)</summary>
@@ -364,7 +364,7 @@ Video is the fastest-growing attack surface, contending with the **temporal axis
 | **ConceptGuard** | ConceptRisk, T2VSafetyBench-TI2V | CogVideoX | ➖ | ✅ | ✅ | ✅ |
 | **T2VShield** | T2VSafetyBench, SafeWatch, MSVD | Open-Sora, CogVideoX, Kling, Luma, Pika | ➖ | ❌ | ✅ | ✅ |
 | **T2VSafetyBench** | 4,400 prompts, 12 categories | T2V generative models | ➖ | ➖ | ➖ | ➖ |
-| **IP-Bench** | Preprocessing & transfer settings | I2V protection methods | ➖ | ➖ | ➖ | ➖ |
+| **IPV-Bench** | Preprocessing & transfer settings | I2V protection methods | ➖ | ➖ | ➖ | ➖ |
 
 *IA = Imperceptibility Analysis · FA = Failure Analysis · TR = Transferability · RB = Robustness to countermeasures · ✅ reported · ❌ not reported · ➖ not applicable*
 
@@ -446,15 +446,15 @@ Evaluation is multi-objective: an attack must be **imperceptible**, **effective*
 | [**VGGFace2**](https://www.robots.ox.ac.uk/~vgg/data/vgg_face2/) | 3.31M images of 9,131 identities with large pose/age/ethnicity variation. |
 | [**FFHQ**](https://github.com/NVlabs/ffhq-dataset) | 70K high-quality 1024×1024 Flickr faces with wide demographic and accessory coverage. |
 | **LFW** | 13,233 in-the-wild faces of 5,749 people; the classic face-verification benchmark. |
-| **Helen** | 2,330 high-resolution portraits with 194 dense facial landmarks. |
-| **UTKFace** | 23K+ faces with age (0–116), gender, and ethnicity annotations. |
-| **CCP** | Clothing Co-Parsing: 2,098 high-resolution street-fashion photos, 57 clothing categories. |
+| **Helen** | 2,330 high-resolution portraits with dense facial landmark annotations. |
+| **UTKFace** | 23,705 faces with age (0–116), gender, and ethnicity annotations. |
+| **CCP** | Clothing Co-Parsing: 2,098 high-resolution street-fashion photos, 59 clothing tags. |
 
 #### Art & style
 
 | Dataset | Description |
 |:---|:---|
-| [**WikiArt**](https://github.com/cs-chan/ArtGAN) | ~80K paintings annotated with 27 styles, 10 genres, 23 artists; the standard style-mimicry testbed. |
+| [**WikiArt**](https://github.com/cs-chan/ArtGAN) | 81,444 paintings annotated with 27 styles, 10 genres, 23 artists; the standard style-mimicry testbed. |
 | [**ArtBench-10**](https://github.com/liaopeiyuan/artbench) | 60K artworks, 10 balanced styles, clean train/test splits at multiple resolutions. |
 | **Anita** | 16K+ hand-drawn keyframes from 14 professional cartoon works (sketch/color/composition stages). |
 
@@ -462,11 +462,11 @@ Evaluation is multi-objective: an attack must be **imperceptible**, **effective*
 
 | Dataset | Description |
 |:---|:---|
-| [**DreamBooth dataset**](https://github.com/google/dreambooth) | 30 subjects (21 objects, 9 pets) with 25 evaluation prompts each; the standard subject-driven personalization benchmark. |
+| [**DreamBooth dataset**](https://github.com/google/dreambooth) | 30 subjects (21 objects, 9 pets) across 15 classes, with 25 evaluation prompts each; the standard subject-driven personalization benchmark. |
 | [**ImageNet**](https://www.image-net.org/) | 1.28M training images over 1,000 classes; used for large-scale protection and purification studies. |
 | [**LSUN**](https://github.com/fyu/lsun) | ~10M scene + 59M object images across 30 categories. |
 | [**LAION-5B**](https://laion.ai/blog/laion-5b/) | 5.85B CLIP-filtered image–text pairs; the pre-training corpus of Stable Diffusion. |
-| [**COCO**](https://cocodataset.org/) | 328K complex everyday scenes with 2.5M labeled instances and captions. |
+| [**COCO**](https://cocodataset.org/) | 330K images across 80 object categories, with 2.5M labeled instances and captions. |
 | [**CIFAR-10**](https://www.cs.toronto.edu/~kriz/cifar.html) | 60K 32×32 images, 10 classes; used in purification and unlearning evaluations. |
 
 #### Editing & inpainting benchmarks
@@ -488,7 +488,7 @@ Evaluation is multi-objective: an attack must be **imperceptible**, **effective*
 |:---|:---|
 | [**I2P**](https://huggingface.co/datasets/AIML-TUDA/i2p) | 4,703 real-world prompts across 7 inappropriateness categories for measuring unsafe degeneration. |
 | [**SneakyPrompt**](https://github.com/Yuchen413/text2image_safety) | NSFW-200 jailbreak prompts (plus Dog/Cat-100 benign substitutes) for safety-filter bypass. |
-| [**MMA-Diffusion**](https://github.com/cure-lab/MMA-Diffusion) | Multimodal red-teaming: 1,000 adversarial NSFW prompts + adversarial images evading checkers. |
+| [**MMA-Diffusion**](https://github.com/cure-lab/MMA-Diffusion) | Multimodal red-teaming: 1,030 adversarial NSFW prompts + 60 adversarial images evading checkers. |
 | [**Ring-A-Bell**](https://github.com/chiayi-hsu/Ring-A-Bell) | Model-agnostic concept-recall prompts (95 nudity, 250 violence) that revive erased concepts. |
 | [**P4D**](https://github.com/joycenerd/P4D) | Prompting4Debugging: optimized universal jailbreak prompts built on I2P. |
 
@@ -515,7 +515,7 @@ Evaluation is multi-objective: an attack must be **imperceptible**, **effective*
 | Dataset | Description |
 |:---|:---|
 | [**TikTok dataset**](https://www.yasamin.page/hdnet_tiktok) | 300+ single-person dance sequences (>100K frames) with masks and DensePose UVs. |
-| **Champ dataset** | ~5K authentic human videos (1M frames) curated for human image animation. |
+| **Champ curated dataset** | ~5K authentic human videos (1M frames) curated for human image animation. |
 | [**UBC Fashion**](https://vision.cs.ubc.ca/datasets/fashion/) | 600 fashion-model videos (~210K frames) for pose-guided generation. |
 | **TED-talks** | 1,177 training chunks of cropped upper-body speakers for articulated animation. |
 
@@ -532,7 +532,7 @@ Evaluation is multi-objective: an attack must be **imperceptible**, **effective*
 | Dataset | Description |
 |:---|:---|
 | **VIOLENT** | 35 face-centric clips of 10 public figures with 280 malicious editing configurations (not publicly released). |
-| **T2VAttackBench** | Consensus-filtered prompts targeting semantic alignment and temporal dynamics of T2V models. |
+| **T2VAttackBench** | 157 VBench-derived prompts (105 semantic, 52 temporal) targeting semantic alignment and temporal dynamics of T2V models. |
 | [**T2VSafetyBench**](https://github.com/yibo-miao/T2VSafetyBench) | 4,400 malicious prompts across 12 safety categories incl. video-specific temporal risk. |
 | **SafeWatch-Bench** | 2M+ video clips over 6 safety categories for training/evaluating video guardrails. |
 | **ConceptRisk** | 8,000 multimodal instances over 200 unsafe concepts for TI2V risk detection. |
@@ -549,11 +549,11 @@ Evaluation is multi-objective: an attack must be **imperceptible**, **effective*
 | [**NeRF-Synthetic (Blender)**](https://www.matthewtancik.com/nerf) | 8 path-traced object scenes at 800² with exact poses; the controlled novel-view baseline. |
 | [**LLFF**](https://github.com/Fyusion/LLFF) | 8 real forward-facing scenes (20–62 handheld captures each). |
 | [**Mip-NeRF 360**](https://jonbarron.info/mipnerf360/) | 9 unbounded real 360° scenes (5 outdoor, 4 indoor) with complex geometry. |
-| [**Tanks and Temples**](https://www.tanksandtemples.org/) | Large real scenes with laser-scanned ground-truth geometry; Truck/Train are common 3DGS test cases. |
-| **F2-NeRF Free** | Unbounded real scenes captured with arbitrary/free camera trajectories. |
+| [**Tanks and Temples**](https://www.tanksandtemples.org/) | Video-based captures of large real scenes with laser-scanned ground truth; 7 training + 14 benchmark test scenes, of which Truck/Train are common 3DGS test cases. |
+| **F2-NeRF Free** | 7 scene-organized captures of unbounded real scenes with arbitrary/free camera trajectories. |
 | [**BlendedMVS**](https://github.com/YoYo000/BlendedMVS) | 113 reconstructed scenes, 17K+ images for generalizable multi-view stereo. |
 | [**Instruct-NeRF2NeRF**](https://instruct-nerf2nerf.github.io/) | Real Nerfstudio scenes paired with natural-language edit instructions; the reference instruction-editing testbed. |
-| [**NeRF-Art**](https://cassiepython.github.io/nerfart/) | Captured multi-view NeRF scenes for text-driven stylization. |
+| [**NeRF-Art**](https://cassiepython.github.io/nerfart/) | Captured multi-view scenes for text-driven stylization: self-portrait captures plus scenes from H3DS and LLFF. |
 | [**Google Scanned Objects**](https://research.google/blog/scanned-objects-by-google-research-a-dataset-of-3d-scanned-common-household-items/) | 1,000+ photorealistic 3D-scanned household items. |
 
 > All 3D protocols mandate novel-view sampling: protection is measured at camera poses never seen during cloak optimization, so it is a property of the 3D representation rather than an artifact of the optimized views. No standardized benchmark yet exists for 3D content protection or multimodal DiT-based editing.
@@ -615,14 +615,21 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for the entry format and inclusio
 <a id="citation"></a>
 # 📖 Citation
 
-This repository accompanies our survey *"A Survey on Adversarial Attacks and Defenses for Diffusion Models Across Multiple Modalities"* (under review, 2026). A citable reference will be added upon publication — until then, feel free to cite this repository:
+This repository accompanies our survey:
+
+> **A Survey on Adversarial Attacks and Defenses for Diffusion Models Across Multiple Modalities**
+> Ozgur Kara¹, Tarik Can Ozden¹, Furkan Horoz¹, Zeqian Long¹˒³, Haotian Xue², Yipu Chen², Oguzhan Akcin⁴, Yongxin Chen², James Matthew Rehg¹
+> ¹University of Illinois Urbana-Champaign · ²Georgia Institute of Technology · ³Stanford University · ⁴The University of Texas at Austin
 
 ```bibtex
-@misc{awesome-adv-diffusion,
-  title  = {Awesome Adversarial Attacks and Defenses on Diffusion Models},
-  author = {{Awesome Adv-Diffusion contributors}},
-  year   = {2026},
-  url    = {https://github.com/ozgurkara99/awesome-adv-attack-defense-on-diffusion}
+@article{kara2026survey,
+  title   = {A Survey on Adversarial Attacks and Defenses for Diffusion Models
+             Across Multiple Modalities},
+  author  = {Kara, Ozgur and Ozden, Tarik Can and Horoz, Furkan and Long, Zeqian
+             and Xue, Haotian and Chen, Yipu and Akcin, Oguzhan and Chen, Yongxin
+             and Rehg, James Matthew},
+  journal = {arXiv preprint arXiv:ARXIV-ID-HERE},
+  year    = {2026}
 }
 ```
 
