@@ -4,10 +4,11 @@
 
 ### A curated, task-centric collection of adversarial attacks and defenses for diffusion models across **image**, **video**, and **3D**
 
-Ozgur Kara<sup>1</sup> · Tarik Can Ozden<sup>1</sup> · Furkan Horoz<sup>1</sup> · Zeqian Long<sup>1,3</sup> · Haotian Xue<sup>2</sup> · Yipu Chen<sup>2</sup> · Oguzhan Akcin<sup>4</sup> · Yongxin Chen<sup>2</sup> · James Matthew Rehg<sup>1</sup>
+[Ozgur Kara](https://karaozgur.com/)<sup>1</sup> · [Tarik Can Ozden](https://ozdentarikcan.github.io/)<sup>1</sup> · [Furkan Horoz](https://github.com/H-furkan)<sup>1</sup> · [Zeqian Long](https://zeqian-long.github.io/)<sup>1,3</sup> · [Haotian Xue](https://xavihart.github.io/)<sup>2</sup> · [Yipu Chen](https://peterchenyipu.github.io/)<sup>2</sup> · [Oguzhan Akcin](https://oguzhanakcin.github.io/)<sup>4</sup> · [Yongxin Chen](https://yongxin.ae.gatech.edu/)<sup>2</sup> · [James Matthew Rehg](https://rehg.org/)<sup>1</sup>
 
 <sup>1</sup>University of Illinois Urbana-Champaign · <sup>2</sup>Georgia Institute of Technology · <sup>3</sup>Stanford University · <sup>4</sup>The University of Texas at Austin
 
+[![arXiv](https://img.shields.io/badge/arXiv-2609.05503-b31b1b.svg?style=flat)](https://arxiv.org/abs/2609.05503)
 [![Awesome](https://awesome.re/badge-flat2.svg)](https://awesome.re)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -22,12 +23,13 @@ Ozgur Kara<sup>1</sup> · Tarik Can Ozden<sup>1</sup> · Furkan Horoz<sup>1</sup
 
 Diffusion models are now the dominant generative paradigm for visual content — and their public availability enables misuse at scale: unauthorized personalization, style mimicry, malicious editing, deepfake videos, and instruction-driven 3D manipulation. A fast-growing body of research fights back with **adversarial attacks** (protective "cloaks" that immunize content *before* it can be exploited) and **defenses** (purification, unlearning, moderation, and red-teaming).
 
-This repository accompanies our survey — **the first unified review of this literature across all three visual modalities (image, video, and 3D)** — and organizes every method by the *generative task it targets*, so that works addressing the same threat are directly comparable.
+This repository accompanies our [survey](https://arxiv.org/abs/2609.05503) — **the first unified review of this literature across all three visual modalities (image, video, and 3D)** — and organizes every method by the *generative task it targets*, so that works addressing the same threat are directly comparable.
 
 > 🧭 **The three-actor threat model used throughout:** **Alice** (content owner) publishes content *x* · **Bob** (defender) applies an imperceptible cloak *δ* with budget ‖δ‖ ≤ ε before release · **Eve** (adversary) runs a diffusion pipeline on the published content — and, as an *adaptive* adversary controlling the whole pipeline, may also purify the cloak away. "Attacks" are Bob's proactive cloaks against generative pipelines; "defenses" are Eve's counter-measures and platform-side protections.
 
 ## 🗞️ News
 
+- **2026-09** · 🎉 Our survey has been accepted to [The 1st Workshop on LifeGenIP: Life-Cycle Intellectual Property Governance of Visual Generative Models](https://eccv.ecva.net/virtual/2026/workshop/3103) at ECCV 2026! [📄&nbsp;Paper](https://arxiv.org/abs/2609.05503)
 - **2026-07** · Initial release: 81 methods across image, video, and 3D, with verified paper/code links, per-modality evaluation matrices, and 55+ datasets & benchmarks.
 
 ## 📌 Contents
@@ -620,9 +622,9 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for the entry format and inclusio
 <a id="citation"></a>
 # 📖 Citation
 
-This repository accompanies our survey:
+This repository accompanies our survey, accepted to [The 1st Workshop on LifeGenIP: Life-Cycle Intellectual Property Governance of Visual Generative Models](https://eccv.ecva.net/virtual/2026/workshop/3103) at ECCV 2026:
 
-> **A Survey on Adversarial Attacks and Defenses for Diffusion Models Across Multiple Modalities**
+> **[A Survey on Adversarial Attacks and Defenses for Diffusion Models Across Multiple Modalities](https://arxiv.org/abs/2609.05503)**
 > Ozgur Kara¹, Tarik Can Ozden¹, Furkan Horoz¹, Zeqian Long¹˒³, Haotian Xue², Yipu Chen², Oguzhan Akcin⁴, Yongxin Chen², James Matthew Rehg¹
 > ¹University of Illinois Urbana-Champaign · ²Georgia Institute of Technology · ³Stanford University · ⁴The University of Texas at Austin
 
@@ -633,7 +635,7 @@ This repository accompanies our survey:
   author  = {Kara, Ozgur and Ozden, Tarik Can and Horoz, Furkan and Long, Zeqian
              and Xue, Haotian and Chen, Yipu and Akcin, Oguzhan and Chen, Yongxin
              and Rehg, James Matthew},
-  journal = {arXiv preprint arXiv:ARXIV-ID-HERE},
+  journal = {arXiv preprint arXiv:2609.05503},
   year    = {2026}
 }
 ```
